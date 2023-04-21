@@ -40,6 +40,18 @@ pipeline {
       steps {
         sh 'docker push harshitreddy/finance-project:latest'
             }
-    }        
+    }
+   stage ('Configure Test-server with Terraform'){
+            steps {
+                dir('deployneeds'){
+                sh 'sudo chmod 600 harshit1.pem'
+                sh 'terraform init'
+                sh 'terraform validate'
+                sh 'terraform apply --auto-approve'
+                }
+             
+       }
+}
+ 
 }    
 }
