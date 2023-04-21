@@ -8,7 +8,7 @@
     command : yum update
 
   - name : Install Docker
-    command : yum install docker.io -y
+    command : yum install docker -y
 
   - name : Start Docker Service
     command : sudo systemctl start docker
