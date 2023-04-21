@@ -1,6 +1,6 @@
 ---
 - name : Configure Docker on node Instance
-  hosts : [demo]
+  hosts : all
   become: yes
   connection : ssh
   tasks : 
