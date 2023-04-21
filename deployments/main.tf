@@ -1,4 +1,4 @@
-resource "aws_instance" "Finance Deploy" {
+resource "aws_instance" "Finance-Deploy" {
   ami           = "ami-0c768662cc797cd75" 
   instance_type = "t2.micro" 
   key_name = "harshit1"
@@ -16,9 +16,9 @@ resource "aws_instance" "Finance Deploy" {
     Name = "Finance Deploy"
   }
   provisioner "local-exec" {
-        command = " echo ${aws_instance.Finance Deploy.public_ip} > inventory "
+        command = " echo ${aws_instance.Finance-Deploy.public_ip} > inventory "
 		}
   provisioner "local-exec" {
-  command = " ansible-playbook /var/lib/jenkins/workspace/Finance Project/deployments/financeplaybook.yml "
+  command = " ansible-playbook /var/lib/jenkins/workspace/FinanceProject/deployments/financeplaybook.yml "
   } 
 }
