@@ -36,5 +36,10 @@ pipeline {
                     }
             }
     }     
+    stage('Push Image to Docker Registory') {
+      steps {
+        sh 'docker push harshitreddy/finance-project:latest'
+            }
+    }        
 }    
 }
