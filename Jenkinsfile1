@@ -24,5 +24,10 @@ pipeline {
         publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/Finance Project', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
             }
     }        
+    stage('Image Creation') {
+    steps {
+      sh 'docker build -t harshitreddy/finance-project:latest .'
+          }
+    }   
 }    
 }
